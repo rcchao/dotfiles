@@ -38,3 +38,19 @@ git checkout $(git branch --all | fzf| tr -d "[[:space:]]")
 
 # ----------------- evals ----------------
 eval "$(starship init zsh)"
+
+#  ------------ brew install -------------
+# Brew install command that installs, appends to Brewfile, then commits
+# Usage: bi <package> [--cask]
+# Example: bi ripgrep
+#          bi --cask figma
+bi() {
+  if [[ "$1" == "--cask" ]]; then
+    brew install --cask "$2"
+    echo "cask \"$2\"" >> ~/dotfiles/Brewfile
+  else
+    brew install "$1"
+    echo "brew \"$1\"" >> ~/dotfiles/Brewfile
+  fi
+  cd ~/dotfiles && git add Brewfile && git commit -m "add $*" && cd -
+}
