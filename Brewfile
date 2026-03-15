@@ -13,6 +13,9 @@ brew "starship"
 brew "presenterm"
 # uv
 brew "uv"
+brew "gh"
+# for setting chrome as default browser
+brew "defaultbrowser"
 
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
@@ -21,6 +24,14 @@ cask "keycastr"
 # Nerdfont for exa and starship icons
 cask "font-fira-code-nerd-font"
 cask "claude-code"
+cask "google-chrome"
+cask "raycast"
+cask "cursor"
+cask "slack"
+cask "kitty"
+cask "ghostty"
+cask "visual-studio-code"
+cask "docker"
 
 vscode "bradlc.vscode-tailwindcss"
 vscode "eamodio.gitlens"
