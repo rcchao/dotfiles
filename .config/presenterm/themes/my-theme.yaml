@@ -1,0 +1,6 @@
+extends: dark
+
+slide_title:
+  font_size: 1
+  padding_top: 0
+  padding_bottom: 0
