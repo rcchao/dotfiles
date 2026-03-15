@@ -1,6 +1,7 @@
 # ---------- Brewfile configs -----------
 export HOMEBREW_BUNDLE_NO_UPGRADE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1 
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # --------- Oh My Zsh bootstrap ---------
 export ZSH="$HOME/.oh-my-zsh"
