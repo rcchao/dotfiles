@@ -36,4 +36,5 @@ cask "docker"
 vscode "bradlc.vscode-tailwindcss"
 vscode "eamodio.gitlens"
 vscode "esbenp.prettier-vscode"
-vscode "prisma.prisma"
+# watch can be used to run programs periodically 
+vscode "prisma.prisma"brew "watch"
