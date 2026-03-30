@@ -1,0 +1,42 @@
+# bsp: binary space partitioning
+yabai -m config layout bsp
+
+# When a new window is added, when it's vertically split it goes to the right
+# And if it's horizontally split it goes to the bottom
+yabai -m config window_placement second_child
+
+# Padding
+yabai -m config top_padding 0
+yabai -m config bottom_padding 10
+yabai -m config left_padding 10
+yabai -m config right_padding 10
+yabai -m config window_gap 10
+
+# Mouse settings
+yabai -m config mouse_follows_focus on  # Mouse changes focus to where the keyboard is
+yabai -m config mouse_modifier alt      # When alt key is pressed and:
+yabai -m config mouse_action1 move      # left click + drag => moves window
+yabai -m config mouse_action2 resize    # When right click + drag => resizes window
+yabai -m config mouse_drop_action swap  # When a window is dragged to centre of another window, swaps them
+
+# Disable specific apps from being managed by yabai
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Notion Calendar$" manage=off
+yabai -m rule --add app="^Discord$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Photo Booth$" manage=off
+yabai -m rule --add app="^Zoom$" manage=off
+yabai -m rule --add app="^Zoom Meeting$" manage=off
+yabai -m rule --add app="^Zoom Workplace$" manage=off
+
+
+# Spotlight searching
+yabai -m signal --add event=application_front_switched action='
+  sleep 0.3
+  win_id=$(yabai -m query --windows | jq -r ".[] | select(.pid == $YABAI_PROCESS_ID) | .id" | head -n1)
+  if [ -n "$win_id" ]; then
+    yabai -m window --focus "$win_id"
+  fi
+'

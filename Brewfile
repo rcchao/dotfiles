@@ -1,5 +1,6 @@
 tap "nikitabobko/tap"
 tap "FelixKratz/formulae"
+tap "koekeishiya/formulae"
 
 # Command-line fuzzy finder written in Go
 brew "fzf"
@@ -14,6 +15,10 @@ brew "presenterm"
 # uv
 brew "uv"
 brew "gh"
+# Tiling window manager
+brew "yabai"
+# Simple hotkey daemon
+brew "skhd"
 # for setting chrome as default browser
 brew "defaultbrowser"
 

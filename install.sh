@@ -68,6 +68,8 @@ CONFIG_DIRS=(
   "mpv"
   "presenterm"
   "starship"
+  "yabai"
+  "skhd"
 )
 
 for f in "${HOME_FILES[@]}"; do

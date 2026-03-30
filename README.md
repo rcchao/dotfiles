@@ -23,6 +23,8 @@ chmod +x install.sh
 │   ├── mpv/
 │   ├── presenterm/
 │   ├── ghostty/
+│   ├── yabai/
+│   ├── skhd/
 ├── vscode/
 │   ├── setup.sh
 │   ├── settings.json
