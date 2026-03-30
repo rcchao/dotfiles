@@ -52,5 +52,5 @@ bi() {
     brew install "$1"
     echo "brew \"$1\"" >> ~/dotfiles/Brewfile
   fi
-  cd ~/dotfiles && git add Brewfile && git commit -m "add $*" && cd -
+  cd ~/dotfiles && git add Brewfile && git commit -m "add $* to brewfile" && cd -
 }
