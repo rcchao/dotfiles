@@ -41,6 +41,10 @@ fi
 
 # ── 3. Brew Bundle ──────────────────────────────────────────────────
 if [[ -f "$DOTFILES_DIR/Brewfile" ]]; then
+  info "Adding taps from Brewfile..."
+  grep '^tap ' "$DOTFILES_DIR/Brewfile" | sed 's/tap "//;s/"//' | while read -r t; do
+    brew tap "$t" 2>/dev/null || warn "Failed to tap $t"
+  done
   info "Installing packages from Brewfile..."
   brew bundle --file="$DOTFILES_DIR/Brewfile"
   success "Brew bundle complete"
