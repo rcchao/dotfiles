@@ -22,6 +22,7 @@ chmod +x install.sh
 │   ├── kitty/
 │   ├── mpv/
 │   ├── presenterm/
+│   ├── ghostty/
 ├── vscode/
 │   ├── setup.sh
 │   ├── settings.json

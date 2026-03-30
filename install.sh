@@ -93,6 +93,21 @@ for d in "${CONFIG_DIRS[@]}"; do
   success "Linked $link"
 done
 
+# Ghostty (config lives in ~/Library/Application Support/, not ~/.config/)
+GHOSTTY_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
+GHOSTTY_LINK="$GHOSTTY_DIR/config"
+GHOSTTY_TARGET="$DOTFILES_DIR/.config/ghostty/config"
+
+if [[ -f "$GHOSTTY_TARGET" ]]; then
+  mkdir -p "$GHOSTTY_DIR"
+  if [[ -e "$GHOSTTY_LINK" && ! -L "$GHOSTTY_LINK" ]]; then
+    warn "Backing up existing $GHOSTTY_LINK to $GHOSTTY_LINK.bak"
+    mv "$GHOSTTY_LINK" "$GHOSTTY_LINK.bak"
+  fi
+  ln -sf "$GHOSTTY_TARGET" "$GHOSTTY_LINK"
+  success "Linked $GHOSTTY_LINK"
+fi
+
 # ── 5. VS Code Setup ───────────────────────────────────────────────
 info "Setting up VS Code..."
 bash "$DOTFILES_DIR/vscode/setup.sh"
