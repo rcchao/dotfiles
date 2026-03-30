@@ -47,10 +47,10 @@ eval "$(starship init zsh)"
 bi() {
   if [[ "$1" == "--cask" ]]; then
     brew install --cask "$2"
-    echo "cask \"$2\"" >> ~/dotfiles/Brewfile
+    printf '\n%s\n' "cask \"$2\"" >> ~/dotfiles/Brewfile
   else
     brew install "$1"
-    echo "brew \"$1\"" >> ~/dotfiles/Brewfile
+    printf '\n%s\n' "brew \"$1\"" >> ~/dotfiles/Brewfile
   fi
   cd ~/dotfiles && git add Brewfile && git commit -m "add $* to brewfile" && cd -
 }
