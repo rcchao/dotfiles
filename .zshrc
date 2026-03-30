@@ -17,8 +17,8 @@ alias yabairestart="yabai --restart-service"
 alias skhdconfig="open ~/.config/skhd/skhdrc"
 alias skhdrestart="skhd --restart-service"
 alias aerospaceconfig="cd ~/.config/aerospace && code aerospace.toml"
-alias brewfile="cd ~ && open Brewfile"
-alias brewupdate="brew bundle install --no-upgrade && brew bundle install" # install taps first before brews
+alias brewfile="cd ~ && open .Brewfile"
+alias brewupdate="brew bundle install --no-upgrade --global && brew bundle install --global" # install taps first before brews
 alias gcane="git commit --amend --no-edit"
 
 alias present="cd ~/Desktop/repos/config-presentation && presenterm --publish-speaker-notes -x presentation.md"
