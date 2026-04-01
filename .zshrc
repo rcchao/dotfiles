@@ -16,6 +16,7 @@ alias yabaiconfig="open ~/.config/yabai/yabairc"
 alias yabairestart="yabai --restart-service"
 alias skhdconfig="open ~/.config/skhd/skhdrc"
 alias skhdrestart="skhd --restart-service"
+alias dotfiles="cd && code dotfiles"
 alias aerospaceconfig="cd ~/.config/aerospace && code aerospace.toml"
 alias brewfile="cd ~ && open .Brewfile"
 alias brewupdate="brew bundle install --no-upgrade --global && brew bundle install --global" # install taps first before brews
