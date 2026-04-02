@@ -1,0 +1,36 @@
+<keymap version="1" name="Visual Studio (macOS) copy" parent="Visual Studio OSX">
+  <action id="$Cut">
+    <keyboard-shortcut first-keystroke="meta x" />
+    <keyboard-shortcut first-keystroke="shift delete" />
+  </action>
+  <action id="ActivateProjectToolWindow">
+    <keyboard-shortcut first-keystroke="meta b" />
+  </action>
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="meta t" />
+  </action>
+  <action id="DatabaseView.DataSourceCutAction">
+    <keyboard-shortcut first-keystroke="meta x" />
+    <keyboard-shortcut first-keystroke="shift delete" />
+  </action>
+  <action id="EditorCut">
+    <keyboard-shortcut first-keystroke="meta x" />
+    <keyboard-shortcut first-keystroke="shift delete" />
+  </action>
+  <action id="EditorSelectLine">
+    <keyboard-shortcut first-keystroke="meta l" />
+  </action>
+  <action id="Pause">
+    <keyboard-shortcut first-keystroke="meta pause" />
+  </action>
+  <action id="SearchEverywhere" />
+  <action id="ShowSettings">
+    <keyboard-shortcut first-keystroke="shift meta p" />
+  </action>
+  <action id="Terminal.NewTab" />
+  <action id="UsageView.Remove">
+    <keyboard-shortcut first-keystroke="meta x" />
+    <keyboard-shortcut first-keystroke="shift delete" />
+  </action>
+  <action id="Vcs.Log.FocusTextFilter" />
+</keymap>

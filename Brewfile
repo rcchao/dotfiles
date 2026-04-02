@@ -37,9 +37,9 @@ cask "kitty"
 cask "ghostty"
 cask "visual-studio-code"
 cask "docker"
+cask "intellij-idea"
 
 vscode "bradlc.vscode-tailwindcss"
 vscode "eamodio.gitlens"
 vscode "esbenp.prettier-vscode"
-# watch can be used to run programs periodically 
-vscode "prisma.prisma"brew "watch"
+vscode "prisma.prisma"

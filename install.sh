@@ -114,16 +114,28 @@ if [[ -f "$GHOSTTY_TARGET" ]]; then
   success "Linked $GHOSTTY_LINK"
 fi
 
-# ── 5. VS Code Setup ───────────────────────────────────────────────
+# ── 5. IntelliJ Keymaps ───────────────────────────────────────────
+info "Setting up IntelliJ keymaps..."
+INTELLIJ_KEYMAPS_DIR=$(find "$HOME/Library/Application Support/JetBrains" -maxdepth 2 -name "keymaps" -type d 2>/dev/null | head -1)
+if [[ -n "$INTELLIJ_KEYMAPS_DIR" ]]; then
+  for f in "$DOTFILES_DIR/intellij/keymaps/"*.xml; do
+    ln -sf "$f" "$INTELLIJ_KEYMAPS_DIR/$(basename "$f")"
+    success "Linked IntelliJ keymap: $(basename "$f")"
+  done
+else
+  warn "No IntelliJ installation found — skipping keymaps"
+fi
+
+# ── 6. VS Code Setup ───────────────────────────────────────────────
 info "Setting up VS Code..."
 bash "$DOTFILES_DIR/vscode/setup.sh"
 
-# ── 6. macOS Defaults ──────────────────────────────────────────────
+# ── 7. macOS Defaults ──────────────────────────────────────────────
 info "Applying macOS defaults..."
 bash "$DOTFILES_DIR/macos/defaults.sh"
 success "macOS defaults applied"
 
-# ── 7. Git Auth ─────────────────────────────────────────────────────
+# ── 8. Git Auth ─────────────────────────────────────────────────────
 if ! gh auth status &>/dev/null; then
   info "Authenticating with GitHub..."
   gh auth login
@@ -134,7 +146,7 @@ fi
 # Ensure default rebase editor is vim:
 git config --global core.editor "vim"
 
-# ── 8. Done ─────────────────────────────────────────────────────────
+# ── 9. Done ─────────────────────────────────────────────────────────
 echo ""
 echo -e "${GREEN}✅ Setup complete!${NC}"
 echo ""
