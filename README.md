@@ -25,6 +25,8 @@ chmod +x install.sh
 │   ├── ghostty/
 │   ├── yabai/
 │   ├── skhd/
+├── intellij/
+│   └── keymaps/
 ├── vscode/
 │   ├── setup.sh
 │   ├── settings.json
