@@ -46,3 +46,5 @@ vscode "esbenp.prettier-vscode"
 vscode "prisma.prisma"
 
 cask "claude"
+
+cask "claude"
