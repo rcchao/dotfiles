@@ -21,6 +21,8 @@ brew "yabai"
 brew "skhd"
 # for setting chrome as default browser
 brew "defaultbrowser"
+# watch can be used to run programs periodically 
+# brew "watch"
 
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
@@ -28,18 +30,19 @@ cask "nikitabobko/tap/aerospace"
 cask "keycastr"
 # Nerdfont for exa and starship icons
 cask "font-fira-code-nerd-font"
-cask "claude-code"
-cask "google-chrome"
-cask "raycast"
-cask "cursor"
-cask "slack"
-cask "kitty"
-cask "ghostty"
-cask "visual-studio-code"
-cask "docker"
-cask "intellij-idea"
+# cask "claude-code"
+# cask "google-chrome"
+# cask "raycast"
+# cask "cursor"
+# cask "slack"
+# cask "kitty"
+# cask "ghostty"
+# cask "visual-studio-code"
+# cask "docker"
 
 vscode "bradlc.vscode-tailwindcss"
 vscode "eamodio.gitlens"
 vscode "esbenp.prettier-vscode"
 vscode "prisma.prisma"
+
+cask "claude"
