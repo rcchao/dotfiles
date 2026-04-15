@@ -21,6 +21,7 @@ alias yabaiconfig="open ~/.config/yabai/yabairc"
 alias yabairestart="yabai --restart-service"
 alias zshconfig="open ~/.zshrc"
 alias zshrestart="source ~/.zshrc"
+alias rp="realpath | pbcopy"
 
 # ------ Better ctrl+r fuzzy find --------
 source <(fzf --zsh)
