@@ -2,5 +2,6 @@
     "workbench.colorTheme": "Default High Contrast",
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'FiraCode Nerd Font'",
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "claudeCode.preferredLocation": "panel"
 }
