@@ -9,21 +9,34 @@
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="meta t" />
   </action>
+  <action id="Compare.SameVersion" />
+  <action id="CompareTwoFiles" />
+  <action id="Console.TableResult.CloneRow" />
+  <action id="DatabaseView.CopyAction" />
   <action id="DatabaseView.DataSourceCutAction">
     <keyboard-shortcut first-keystroke="meta x" />
     <keyboard-shortcut first-keystroke="shift delete" />
   </action>
+  <action id="Diff.ShowDiff" />
   <action id="EditorCut">
     <keyboard-shortcut first-keystroke="meta x" />
     <keyboard-shortcut first-keystroke="shift delete" />
   </action>
+  <action id="EditorDuplicate" />
   <action id="EditorSelectLine">
     <keyboard-shortcut first-keystroke="meta l" />
   </action>
+  <action id="FileChooser.GotoDesktop" />
+  <action id="Frontend.ChangesView.ShowDiff" />
   <action id="Pause">
     <keyboard-shortcut first-keystroke="meta pause" />
   </action>
+  <action id="RunDashboard.CopyConfiguration" />
   <action id="SearchEverywhere" />
+  <action id="SelectNextOccurrence">
+    <keyboard-shortcut first-keystroke="meta d" />
+  </action>
+  <action id="SendEOF" />
   <action id="ShowSettings">
     <keyboard-shortcut first-keystroke="shift meta p" />
   </action>
@@ -33,4 +46,5 @@
     <keyboard-shortcut first-keystroke="shift delete" />
   </action>
   <action id="Vcs.Log.FocusTextFilter" />
+  <action id="XDebugger.CopyWatch" />
 </keymap>
