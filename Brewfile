@@ -50,3 +50,5 @@ cask "claude"
 cask "claude"
 
 brew "claude-code"
+
+brew "zsh-autosuggestions"
