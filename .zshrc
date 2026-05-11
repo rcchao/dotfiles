@@ -26,6 +26,10 @@ alias rp="realpath | pbcopy"
 # ------ Better ctrl+r fuzzy find --------
 source <(fzf --zsh)
 
+# ------ Add tab autocompletions ---------
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^I' autosuggest-accept
+
 # ------- Better ls (exa is depr)---------
 # alias ls="eza --icons=always" # brew install ls
 alias ls='lsd --tree --depth 1' # brew install lsd
