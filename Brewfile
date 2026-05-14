@@ -52,3 +52,5 @@ cask "claude"
 brew "claude-code"
 
 brew "zsh-autosuggestions"
+
+brew "thefuck"
