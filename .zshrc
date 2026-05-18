@@ -40,6 +40,7 @@ git checkout $(git branch --all | fzf| tr -d "[[:space:]]")
 
 # ----------------- evals ----------------
 eval "$(starship init zsh)"
+eval $(thefuck --alias)
 
 #  ------------ brew install -------------
 # Brew install command that installs, appends to Brewfile, then commits
