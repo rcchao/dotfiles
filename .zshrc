@@ -23,6 +23,9 @@ alias zshconfig="open ~/.zshrc"
 alias zshrestart="source ~/.zshrc"
 alias rp="realpath | pbcopy"
 
+alias start_bot='(cd /Users/rebecca/Desktop/CS/Projects/autoreply_bot && nohup python3 poll_and_draft.py --loop 360 > poll.log 2>&1 & nohup python3 telegram_bot.py > telegram.log 2>&1 &)'
+alias stop_bot='pkill -f poll_and_draft.py; pkill -f telegram_bot.py'
+
 # ------ Better ctrl+r fuzzy find --------
 source <(fzf --zsh)
 
