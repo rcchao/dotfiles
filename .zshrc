@@ -11,9 +11,9 @@ source $ZSH/oh-my-zsh.sh
 
 # ---------- General aliases ------------
 alias aerospaceconfig="cd ~/.config/aerospace && code aerospace.toml"
-alias brewfile="cd ~ && open .Brewfile"
+alias brewfile="(cd ~ && open .Brewfile)"
 alias brewupdate="brew bundle install --no-upgrade --global && brew bundle install --global" # install taps first before brews
-alias dotfiles="cd && code dotfiles"
+alias dotfiles="(cd && code dotfiles)"
 alias gcane="git commit --amend --no-edit"
 alias skhdconfig="open ~/.config/skhd/skhdrc"
 alias skhdrestart="skhd --restart-service"
