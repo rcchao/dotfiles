@@ -24,6 +24,7 @@ chmod +x install.sh
 │   ├── presenterm/
 │   ├── ghostty/
 │   ├── yabai/
+│   ├── karabiner/
 │   ├── skhd/
 ├── intellij/
 │   └── keymaps/

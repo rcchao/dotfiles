@@ -64,6 +64,7 @@ HOME_FILES=(
 # Directories in ~/.config/
 CONFIG_DIRS=(
   "aerospace"
+  "karabiner"
   "kitty"
   "mpv"
   "presenterm"
