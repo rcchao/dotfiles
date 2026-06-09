@@ -22,6 +22,8 @@ alias yabairestart="yabai --restart-service"
 alias zshconfig="open ~/.zshrc"
 alias zshrestart="source ~/.zshrc"
 alias rp="realpath | pbcopy"
+alias gmend="git commit --amend --no-edit && git push --force-with-lease"
+alias gamend="git add -A && git commit --amend --no-edit && git push --force-with-lease"
 
 alias start_bot='(cd /Users/rebecca/Desktop/CS/Projects/autoreply_bot && nohup python3 poll_and_draft.py --loop 360 > poll.log 2>&1 & nohup python3 telegram_bot.py > telegram.log 2>&1 &)'
 alias stop_bot='pkill -f poll_and_draft.py; pkill -f telegram_bot.py'
@@ -38,7 +40,7 @@ alias ls='lsd --tree --depth 1' # brew install lsd
 
 # ----------- fzf git checkout -----------
 gch() {
-git checkout $(git branch --all | fzf| tr -d "[[:space:]]")
+git checkout $(git branch --all | fzf | tr -d "[[:space:]]" | sed 's#^remotes/origin/##')
 }
 
 # ----------------- evals ----------------
