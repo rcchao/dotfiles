@@ -6,13 +6,24 @@
       "Bash(ls:*)",
       "Bash(bash -n:*)",
       "Bash(zsh:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(gh api *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr checkout *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr checks *)",
+      "Bash(gh pr comments *)"
     ],
     "deny": [
       "Bash(git commit:*)",
       "Bash(git push:*)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
+  "model": "claude-opus-4-6",
+  "effortLevel": "high",
+  "skipAutoPermissionPrompt": true,
   "preferences": {
     "custom_instructions": "If a new feature is implemented, always end the response with: what features were added, how to test them, and the expected output."
   }
