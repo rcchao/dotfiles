@@ -26,7 +26,7 @@ alias gmend="git commit --amend --no-edit && git push --force-with-lease"
 alias gamend="git add -A && git commit --amend --no-edit && git push --force-with-lease"
 
 # Git commit, push, and open PR in one shot
-# Usage: pr "feat: my cool feature"
+# Usage: pr "feat: my cool feature" x
 pr() {
   git commit -m "$1" && git push -u origin HEAD && gh pr create --fill --web
 }
