@@ -46,7 +46,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "A", "B", "C",
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C",
                          "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
                          "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
@@ -185,6 +185,7 @@ on-mode-changed = []
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
+    # Command to find app ID is: osascript -e 'id of application "Slack"'
     [[on-window-detected]]
     if.app-id = "com.tinyspeck.slackmacgap"
     run = "move-node-to-workspace S"
@@ -213,6 +214,10 @@ on-mode-changed = []
     [[on-window-detected]]
     if.app-id = "com.jetbrains.intellij"
     run = "move-node-to-workspace I"
+
+    [[on-window-detected]]
+    if.app-id = "dev.zed.Zed"
+    run = "move-node-to-workspace Z"
 
     [[on-window-detected]]
     if.app-id = "us.zoom.xos"
