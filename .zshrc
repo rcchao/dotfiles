@@ -25,6 +25,12 @@ alias rp="realpath | pbcopy"
 alias gmend="git commit --amend --no-edit && git push --force-with-lease"
 alias gamend="git add -A && git commit --amend --no-edit && git push --force-with-lease"
 
+# Git commit, push, and open PR in one shot
+# Usage: pr "feat: my cool feature"
+pr() {
+  git commit -m "$1" && git push -u origin HEAD && gh pr create --fill --web
+}
+
 alias start_bot='(cd /Users/rebecca/Desktop/CS/Projects/autoreply_bot && nohup python3 poll_and_draft.py --loop 360 > poll.log 2>&1 & nohup python3 telegram_bot.py > telegram.log 2>&1 &)'
 alias stop_bot='pkill -f poll_and_draft.py; pkill -f telegram_bot.py'
 
