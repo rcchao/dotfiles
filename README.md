@@ -17,6 +17,10 @@ chmod +x install.sh
 ~/dotfiles/
 ├── .zshrc
 ├── .zprofile
+├── .codex/
+│   ├── AGENTS.md
+│   ├── config.toml
+│   └── rules/
 ├── .config/
 │   ├── aerospace/
 │   ├── kitty/
