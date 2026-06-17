@@ -1,0 +1,41 @@
+# Personal hard bans for Codex command execution.
+# These block common shell/CLI paths; global AGENTS.md also forbids connector writes.
+
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "forbidden",
+    justification = "Personal rule: never push from Codex. Prepare the command for the user instead.",
+    match = [
+        "git push",
+        "git push origin main",
+        "git push --tags",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", "comment"],
+    decision = "forbidden",
+    justification = "Personal rule: never comment on PRs from Codex. Draft the comment for the user instead.",
+    match = [
+        "gh pr comment 123 --body hello",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", "review"],
+    decision = "forbidden",
+    justification = "Personal rule: never submit PR reviews/comments from Codex. Draft the review for the user instead.",
+    match = [
+        "gh pr review 123 --comment --body hello",
+        "gh pr review 123 --approve",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "issue", "comment"],
+    decision = "forbidden",
+    justification = "Personal rule: PRs can be commented on through issue comments; draft the comment for the user instead.",
+    match = [
+        "gh issue comment 123 --body hello",
+    ],
+)

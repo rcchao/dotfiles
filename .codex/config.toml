@@ -1,0 +1,62 @@
+notify = ["/Users/rebeccachao/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-16T02:06:58Z"
+source_type = "local"
+source = "/Users/rebeccachao/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-06-16T03:33:18Z"
+source_type = "local"
+source = "/Users/rebeccachao/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[features]
+js_repl = false
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/rebeccachao/.codex"
+CODEX_HOME = "/Users/rebeccachao/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "98ab8dad29094c0d4ee0d14abd4799bab88c56ef203f4ab5aca0eaeeaf0273b6"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.609.71144"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = false
+dock-icon-preference = "codex-light"
+
+[projects."/Users/rebeccachao/Documents/Codex/2026-06-16/are-yo-uconnected-to-my-slack"]
+trust_level = "trusted"
+
+[projects."/Users/rebeccachao/Documents/Codex/2026-06-16/help-me-adjust-my-codex-config"]
+trust_level = "trusted"
+
+[projects."/Users/rebeccachao/Documents/Codex/2026-06-17/does-codex-have-skills-like-claude"]
+trust_level = "trusted"
