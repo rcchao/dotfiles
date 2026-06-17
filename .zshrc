@@ -27,8 +27,11 @@ alias gamend="git add -A && git commit --amend --no-edit && git push --force-wit
 
 # Git commit, push, and open PR in one shot
 # Usage: pr "feat: my cool feature"
+# Auto-inserts the ticket number into the PR title if branch is in format eng-XXXX
 pr() {
-  git commit -m "$1" && git push -u origin HEAD && gh pr create --fill --web
+  local ticket=$(git branch --show-current | grep -oi 'eng-[0-9]*' | head -1 | tr '[:lower:]' '[:upper:]')
+  local title="${1%% *} ${ticket:+$ticket }${1#* }"
+  git commit -m "$title" && git push -u origin HEAD && gh pr create --title "$title" --web
 }
 
 alias start_bot='(cd /Users/rebecca/Desktop/CS/Projects/autoreply_bot && nohup python3 poll_and_draft.py --loop 360 > poll.log 2>&1 & nohup python3 telegram_bot.py > telegram.log 2>&1 &)'
