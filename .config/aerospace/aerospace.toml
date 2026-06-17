@@ -195,6 +195,10 @@ on-mode-changed = []
     run = "move-node-to-workspace C"
 
     [[on-window-detected]]
+    if.app-id = "dev.zed.Zed"
+    run = "move-node-to-workspace C"
+
+    [[on-window-detected]]
     if.app-id = "com.microsoft.VSCode"
     run = "move-node-to-workspace V"
 
@@ -214,10 +218,6 @@ on-mode-changed = []
     [[on-window-detected]]
     if.app-id = "com.jetbrains.intellij"
     run = "move-node-to-workspace I"
-
-    [[on-window-detected]]
-    if.app-id = "dev.zed.Zed"
-    run = "move-node-to-workspace Z"
 
     [[on-window-detected]]
     if.app-id = "us.zoom.xos"
