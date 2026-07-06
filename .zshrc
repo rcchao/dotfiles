@@ -22,6 +22,8 @@ alias yabairestart="yabai --restart-service"
 alias zshconfig="open ~/.zshrc"
 alias zshrestart="source ~/.zshrc"
 alias rp="realpath | pbcopy"
+alias gs="git stash"
+alias gsp="git stash pop"
 alias gmend="git commit --amend --no-edit && git push --force-with-lease"
 alias gamend="git add -A && git commit --amend --no-edit && git push --force-with-lease"
 
