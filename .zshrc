@@ -26,6 +26,7 @@ alias gs="git stash"
 alias gsp="git stash pop"
 alias gmend="git commit --amend --no-edit && git push --force-with-lease"
 alias gamend="git add -A && git commit --amend --no-edit && git push --force-with-lease"
+alias grebase="git fetch && git rebase origin/main && git push --force-with-lease"
 
 # Git commit, push, and open PR in one shot
 # Usage: pr "feat: my cool feature"
