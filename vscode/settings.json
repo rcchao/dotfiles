@@ -3,5 +3,11 @@
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'FiraCode Nerd Font'",
     "files.autoSave": "afterDelay",
-    "claudeCode.preferredLocation": "panel"
+    "claudeCode.preferredLocation": "panel",
+    "workbench.colorCustomizations": {
+      "[Default High Contrast]": {
+          "terminal.foreground": "#ffffff",
+          "terminal.background": "#000000"
+      }
+    }
 }
