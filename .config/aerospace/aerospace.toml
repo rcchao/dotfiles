@@ -176,6 +176,7 @@ on-mode-changed = []
     alt-shift-n = 'move-node-to-workspace N'
     alt-shift-i = 'move-node-to-workspace I'
     alt-shift-v = 'move-node-to-workspace V'
+    alt-shift-z = 'move-node-to-workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -191,12 +192,16 @@ on-mode-changed = []
     run = "move-node-to-workspace S"
 
     [[on-window-detected]]
+    if.app-id = "com.openai.codex"
+    run = "move-node-to-workspace C"
+
+    [[on-window-detected]]
     if.app-id = "com.todesktop.230313mzl4w4u92"
     run = "move-node-to-workspace C"
 
     [[on-window-detected]]
     if.app-id = "dev.zed.Zed"
-    run = "move-node-to-workspace C"
+    run = "move-node-to-workspace Z"
 
     [[on-window-detected]]
     if.app-id = "com.microsoft.VSCode"
