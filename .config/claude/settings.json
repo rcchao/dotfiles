@@ -21,9 +21,16 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "claude-opus-4-6",
-  "effortLevel": "high",
+  "hooks": {
+  "Stop": [
+    { "hooks": [{ "type": "command", "command": "afplay /System/Library/Sounds/Glass.aiff" }] }
+  ]
+},
   "skipAutoPermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccstatusline@latest"
+  },
   "preferences": {
     "custom_instructions": "If a new feature is implemented, always end the response with: what features were added, how to test them, and the expected output."
   }
