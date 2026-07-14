@@ -172,6 +172,7 @@ on-mode-changed = []
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
+    alt-shift-b = 'move-node-to-workspace B'
     alt-shift-c = 'move-node-to-workspace C'
     alt-shift-n = 'move-node-to-workspace N'
     alt-shift-i = 'move-node-to-workspace I'
@@ -187,6 +188,10 @@ on-mode-changed = []
     alt-shift-semicolon = 'mode service'
 
     # Command to find app ID is: osascript -e 'id of application "Slack"'
+    [[on-window-detected]]
+    if.app-id = "org.blenderfoundation.blender"
+    run = "move-node-to-workspace B"
+
     [[on-window-detected]]
     if.app-id = "com.tinyspeck.slackmacgap"
     run = "move-node-to-workspace S"
