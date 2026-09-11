@@ -177,6 +177,7 @@ on-mode-changed = []
     alt-shift-n = 'move-node-to-workspace N'
     alt-shift-i = 'move-node-to-workspace I'
     alt-shift-v = 'move-node-to-workspace V'
+    alt-shift-u = 'move-node-to-workspace U'
     alt-shift-z = 'move-node-to-workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -191,6 +192,14 @@ on-mode-changed = []
     [[on-window-detected]]
     if.app-id = "org.blenderfoundation.blender"
     run = "move-node-to-workspace B"
+
+    [[on-window-detected]]
+    if.app-id = "com.unity3d.unityhub"
+    run = "move-node-to-workspace U"
+
+    [[on-window-detected]]
+    if.app-id = "com.unity3d.UnityEditor5.x"
+    run = "move-node-to-workspace U"
 
     [[on-window-detected]]
     if.app-id = "com.tinyspeck.slackmacgap"
