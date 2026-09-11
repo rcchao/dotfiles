@@ -22,7 +22,10 @@ alias gs="git stash"
 alias gsp="git stash pop"
 alias gmend="git commit --amend --no-edit && git push --force-with-lease"
 alias gamend="git add -A && git commit --amend --no-edit && git push --force-with-lease"
-alias grebase="git fetch && git rebase origin/main && git push --force-with-lease"
+grebase() {
+  local base=$(gh pr view --json baseRefName -q .baseRefName 2>/dev/null || echo main)
+  git fetch origin "$base" && git rebase "origin/$base" && git push --force-with-lease
+}
 
 # Git commit, push, and open PR in one shot
 # Usage: pr "feat: my cool feature"
