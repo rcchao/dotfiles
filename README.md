@@ -27,6 +27,7 @@ chmod +x install.sh
 │   ├── mpv/
 │   ├── presenterm/
 │   ├── ghostty/
+│   ├── herdr/
 │   ├── yabai/
 │   ├── karabiner/
 │   ├── skhd/

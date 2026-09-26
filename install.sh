@@ -100,6 +100,20 @@ for d in "${CONFIG_DIRS[@]}"; do
   success "Linked $link"
 done
 
+# Herdr
+HERDR_TARGET="$DOTFILES_DIR/.config/herdr/config.toml"
+HERDR_LINK="$HOME/.config/herdr/config.toml"
+
+if [[ -f "$HERDR_TARGET" ]]; then
+  mkdir -p "$HOME/.config/herdr"
+  if [[ -e "$HERDR_LINK" && ! -L "$HERDR_LINK" ]]; then
+    warn "Backing up existing $HERDR_LINK to $HERDR_LINK.bak"
+    mv "$HERDR_LINK" "$HERDR_LINK.bak"
+  fi
+  ln -sf "$HERDR_TARGET" "$HERDR_LINK"
+  success "Linked $HERDR_LINK"
+fi
+
 # Ghostty (config lives in ~/Library/Application Support/, not ~/.config/)
 GHOSTTY_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
 GHOSTTY_LINK="$GHOSTTY_DIR/config"
