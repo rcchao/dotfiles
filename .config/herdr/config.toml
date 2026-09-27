@@ -14,12 +14,6 @@ close_pane = "cmd+x"
 split_vertical = "cmd+alt+l"
 split_horizontal = "cmd+alt+j"
 
-[[keys.command]]
-key = "prefix+b"
-type = "shell"
-command = "herdr plugin action invoke open-sidebar --plugin herdr-sidebar"
-description = "toggle herdr-sidebar"
-
 [ui.sound]
 enabled = false
 
