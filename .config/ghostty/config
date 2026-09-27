@@ -49,7 +49,36 @@
 # resize-overlay-duration = 4s 200ms
 
 macos-titlebar-style = hidden
+# Treat left option as alt so alt+hjkl reaches herdr for pane navigation
+# (right option still composes special characters)
+macos-option-as-alt = left
+
 window-padding-x = 20
 window-padding-y = 20
 theme = Catppuccin Mocha
 keybind = super+enter=unbind
+# Unbind cmd+1..9 (both translated and physical-key variants) so they pass
+# through to herdr for tab switching instead of Ghostty's own goto_tab
+keybind = super+1=unbind
+keybind = super+2=unbind
+keybind = super+3=unbind
+keybind = super+4=unbind
+keybind = super+5=unbind
+keybind = super+6=unbind
+keybind = super+7=unbind
+keybind = super+8=unbind
+keybind = super+9=unbind
+keybind = super+digit_1=unbind
+keybind = super+digit_2=unbind
+keybind = super+digit_3=unbind
+keybind = super+digit_4=unbind
+keybind = super+digit_5=unbind
+keybind = super+digit_6=unbind
+keybind = super+digit_7=unbind
+keybind = super+digit_8=unbind
+keybind = super+digit_9=unbind
+# Free cmd+shift+j (Ghostty screen-dump) for herdr pane resizing
+keybind = super+shift+j=unbind
+# cmd+h is macOS "Hide Application" — consume it and send the kitty-protocol
+# encoding of super+h ourselves so herdr's focus-pane-left binding works
+keybind = super+h=text:\x1b[104;9u
