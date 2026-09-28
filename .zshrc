@@ -13,6 +13,7 @@ source $ZSH/oh-my-zsh.sh
 alias aerospaceconfig="cd ~/.config/aerospace && code aerospace.toml"
 alias brewfile="(cd ~ && open .Brewfile)"
 alias brewupdate="brew bundle install --no-upgrade --global && brew bundle install --global" # install taps first before brews
+alias cc="claude"
 alias dotfiles="(cd && code dotfiles)"
 alias gcane="git commit --amend --no-edit"
 alias zshconfig="open ~/.zshrc"
@@ -34,6 +35,13 @@ pr() {
   local ticket=$(git branch --show-current | grep -oi 'eng-[0-9]*' | head -1 | tr '[:lower:]' '[:upper:]')
   local title="${1%% *} ${ticket:+$ticket }${1#* }"
   git commit -m "$title" && git push -u origin HEAD && gh pr create --title "$title" --web
+}
+
+# uncommit <file...>: remove file(s) from the last commit (keeps them on disk), amend, force-push
+uncommit() {
+  git rm --cached "$@" &&
+  git commit --amend --no-edit &&
+  git push --force-with-lease
 }
 
 alias start_bot='(cd /Users/rebecca/Desktop/CS/Projects/autoreply_bot && nohup python3 poll_and_draft.py --loop 360 > poll.log 2>&1 & nohup python3 telegram_bot.py > telegram.log 2>&1 &)'
