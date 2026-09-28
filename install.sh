@@ -64,7 +64,6 @@ HOME_FILES=(
 # Directories in ~/.config/
 CONFIG_DIRS=(
   "aerospace"
-  "karabiner"
   "kitty"
   "mpv"
   "presenterm"
@@ -145,12 +144,27 @@ fi
 info "Setting up VS Code..."
 bash "$DOTFILES_DIR/vscode/setup.sh"
 
-# ── 7. macOS Defaults ──────────────────────────────────────────────
+# ── 7. Key Remapping (hidutil) ─────────────────────────────────────
+info "Setting up key remapping (caps_lock <-> delete)..."
+KEYREMAP_TARGET="$DOTFILES_DIR/macos/com.local.KeyRemapping.plist"
+KEYREMAP_LINK="$HOME/Library/LaunchAgents/com.local.KeyRemapping.plist"
+
+mkdir -p "$HOME/Library/LaunchAgents"
+if [[ -e "$KEYREMAP_LINK" && ! -L "$KEYREMAP_LINK" ]]; then
+  warn "Backing up existing $KEYREMAP_LINK to $KEYREMAP_LINK.bak"
+  mv "$KEYREMAP_LINK" "$KEYREMAP_LINK.bak"
+fi
+ln -sf "$KEYREMAP_TARGET" "$KEYREMAP_LINK"
+launchctl bootout gui/$(id -u) "$KEYREMAP_LINK" 2>/dev/null || true
+launchctl bootstrap gui/$(id -u) "$KEYREMAP_LINK"
+success "Key remapping active"
+
+# ── 8. macOS Defaults ──────────────────────────────────────────────
 info "Applying macOS defaults..."
 bash "$DOTFILES_DIR/macos/defaults.sh"
 success "macOS defaults applied"
 
-# ── 8. Git Auth ─────────────────────────────────────────────────────
+# ── 9. Git Auth ─────────────────────────────────────────────────────
 if ! gh auth status &>/dev/null; then
   info "Authenticating with GitHub..."
   gh auth login
@@ -161,7 +175,7 @@ fi
 # Ensure default rebase editor is vim:
 git config --global core.editor "vim"
 
-# ── 9. Done ─────────────────────────────────────────────────────────
+# ── 10. Done ────────────────────────────────────────────────────────
 echo ""
 echo -e "${GREEN}✅ Setup complete!${NC}"
 echo ""

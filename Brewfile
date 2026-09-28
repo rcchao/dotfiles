@@ -48,6 +48,4 @@ brew "zsh-autosuggestions"
 
 brew "thefuck"
 
-cask "karabiner-elements"
-
 brew "withgraphite/tap/graphite"

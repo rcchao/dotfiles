@@ -29,7 +29,6 @@ chmod +x install.sh
 │   ├── ghostty/
 │   ├── herdr/
 │   ├── yabai/
-│   ├── karabiner/
 │   ├── skhd/
 ├── intellij/
 │   └── keymaps/
