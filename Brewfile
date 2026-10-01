@@ -49,3 +49,5 @@ brew "zsh-autosuggestions"
 brew "thefuck"
 
 brew "withgraphite/tap/graphite"
+
+cask "logi-options+"
