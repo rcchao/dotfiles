@@ -23,6 +23,7 @@ alias gs="git stash"
 alias gsp="git stash pop"
 alias gmend="git commit --amend --no-edit && git push --force-with-lease"
 alias gamend="git add -A && git commit --amend --no-edit && git push --force-with-lease"
+alias discard="git reset --hard HEAD && git clean -fd"
 grebase() {
   local base=$(gh pr view --json baseRefName -q .baseRefName 2>/dev/null || echo main)
   git fetch origin "$base" && git rebase "origin/$base" && git push --force-with-lease
@@ -38,10 +39,8 @@ pr() {
 }
 
 # uncommit <file...>: remove file(s) from the last commit (keeps them on disk), amend, force-push
-uncommit() {
-  git rm --cached "$@" &&
-  git commit --amend --no-edit &&
-  git push --force-with-lease
+uncommit () {
+  git rm --cached -r -- "${@/#/*}" && git commit --amend --no-edit && git push --force-with-lease
 }
 
 alias start_bot='(cd /Users/rebecca/Desktop/CS/Projects/autoreply_bot && nohup python3 poll_and_draft.py --loop 360 > poll.log 2>&1 & nohup python3 telegram_bot.py > telegram.log 2>&1 &)'
