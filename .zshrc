@@ -16,6 +16,7 @@ alias brewupdate="brew bundle install --no-upgrade --global && brew bundle insta
 alias cc="claude"
 alias dotfiles="(cd && code dotfiles)"
 alias gcane="git commit --amend --no-edit"
+alias gp="git pull" # override omz git plugin's gp='git push'
 alias zshconfig="open ~/.zshrc"
 alias zshrestart="source ~/.zshrc"
 alias rp="realpath | pbcopy"
