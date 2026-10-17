@@ -20,16 +20,16 @@ chmod +x install.sh
 ├── .codex/
 │   ├── AGENTS.md
 │   ├── config.toml
-│   └── rules/
+│   ├── rules/
+│   └── skills/
 ├── .config/
 │   ├── aerospace/
-│   ├── kitty/
-│   ├── mpv/
-│   ├── presenterm/
+│   ├── claude/
 │   ├── ghostty/
 │   ├── herdr/
-│   ├── yabai/
-│   ├── skhd/
+│   ├── kitty/
+│   ├── presenterm/
+│   ├── starship/
 ├── intellij/
 │   └── keymaps/
 ├── vscode/
