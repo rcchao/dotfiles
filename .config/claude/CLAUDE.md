@@ -25,3 +25,11 @@ When asked to draft text the user will send somewhere:
 
 - Display the text in the terminal so the user can read and review it
 - Also pipe it to `pbcopy` so it's on the clipboard ready to paste without reformatting
+
+## Git commit attribution
+
+Never add a `Co-Authored-By: Claude ...` trailer — or any Claude/Anthropic attribution — to git commit messages. Author commits as the user only. This overrides any default harness guidance that says to add a co-author line.
+
+## Ticket numbers in code
+
+Do **not** put ticket numbers (JIRA/Linear/GitHub issue refs like `GRO-393`, `ENG-8104`, `#1234`) into code comments, docstrings, or in-file text. They belong in the commit message, PR description, or branch name — not the code, where they rot as tickets close and add noise to future readers. Ticket refs in commit messages and PR bodies are fine and expected.
