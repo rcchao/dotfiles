@@ -28,6 +28,7 @@ chmod +x install.sh
 │   ├── ghostty/
 │   ├── herdr/
 │   ├── kitty/
+│   ├── neru/
 │   ├── presenterm/
 │   ├── starship/
 ├── intellij/

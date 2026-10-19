@@ -70,6 +70,7 @@ CONFIG_DIRS=(
   "starship"
   "yabai"
   "skhd"
+  "neru"
 )
 
 for f in "${HOME_FILES[@]}"; do
@@ -175,7 +176,31 @@ fi
 # Ensure default rebase editor is vim:
 git config --global core.editor "vim"
 
-# ── 10. Done ────────────────────────────────────────────────────────
+# ── 10. Neru (keyboard-driven navigation) ─────────────────────────
+# Config is symlinked via CONFIG_DIRS above (~/.config/neru).
+if ! command -v neru &>/dev/null; then
+  info "Installing Neru..."
+  curl -fsSL https://raw.githubusercontent.com/y3owk1n/neru/main/scripts/install.sh | bash
+  success "Neru installed"
+else
+  warn "Neru already installed"
+fi
+
+# Neru taps every keystroke, so macOS requires these permissions BEFORE
+# its daemon will run — and they CANNOT be automated (TCC = manual approval).
+# Setup PAUSES here until you grant them.
+echo ""
+echo -e "${YELLOW}[manual]${NC} Neru needs permissions before its daemon can start:"
+echo "  1. Open Neru once so it appears in the permission lists:    open -a Neru"
+echo "  2. System Settings > Privacy & Security > Accessibility     -> enable Neru"
+echo "  3. System Settings > Privacy & Security > Input Monitoring  -> enable Neru"
+read -r -p "   Press Enter once BOTH are granted to continue... "
+
+info "Registering Neru as a login service..."
+neru services install
+success "Neru will auto-start on login"
+
+# ── 11. Done ────────────────────────────────────────────────────────
 echo ""
 echo -e "${GREEN}✅ Setup complete!${NC}"
 echo ""

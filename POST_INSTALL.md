@@ -7,6 +7,15 @@ These steps require manual interaction and can't be fully automated.
 - [ ] **Aerospace** — grant Accessibility permission
 - [ ] **Slack** — grant Screen Recording + Notifications
 - [ ] **Raycast** — grant Accessibility permission
+- [ ] **Neru** — grant Accessibility **and** Input Monitoring (`install.sh` pauses for this)
+
+## Neru
+
+- [ ] Grant **Accessibility** + **Input Monitoring** (open `Neru` once so it shows in the lists)
+- [ ] Verify the daemon is up: `neru status` (should say `running`)
+- [ ] **Do NOT run `neru doctor`** — its health probe crashes the daemon (upstream bug). Use `neru status`.
+- [ ] If hotkeys don't respond after a reboot, the launchd service can be racy — run `neru launch`
+- [ ] Hotkeys: `Cmd+Shift+Space` hints/click · `Cmd+Shift+S` scroll · `Esc` exits a mode
 
 ## Raycast
 
