@@ -46,6 +46,14 @@ text = "#E8EEFF"
 "Primary+Shift+B" = "bisect"
 "Primary+Shift+S" = "scroll"
 
+# Discord reply: hint a message's text, right-click it, then the script finds
+# the context menu's "Reply" item via accessibility and mouse-clicks it.
+# (Discord's React menu ignores AXPress, and its hover-toolbar buttons are
+# AX-visible but hidden from real clicks — this menu route is what works.)
+[[app_configs]]
+bundle_id = "com.hnc.Discord"
+hotkeys = { "Primary+Shift+R" = "hints --role static_text --action right_click --on-exit 'exec /usr/bin/osascript ~/.config/neru/discord-reply.applescript'" }
+
 # Macros
 # See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#macros
 #
@@ -238,7 +246,7 @@ enabled = true
 capture_scope = "screen"                    # screen, window
 grid_cols = 3                               # >= 1
 grid_rows = 3                               # >= 1
-keys = "rtyfghvbn"                          # grid_cols * grid_rows chars
+keys = "qweasdzxc"                          # grid_cols * grid_rows chars
 min_size_width = 1                          # px
 min_size_height = 1                         # px
 max_depth = 10                              # 1-20
@@ -252,7 +260,7 @@ duration_ms = 50
 "`" = "toggle-cursor-follow-selection"
 "Space" = "action reset"
 "Backspace" = "action backspace"
-"Shift+L" = "action left_click"
+"Shift+L" = ["action left_click --bail-on-error", "idle"]
 "Shift+R" = "action right_click"
 "Shift+M" = "action middle_click"
 "Shift+I" = "action left_click --state down"

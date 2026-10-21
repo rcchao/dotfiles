@@ -16,6 +16,7 @@ These steps require manual interaction and can't be fully automated.
 - [ ] **Do NOT run `neru doctor`** — its health probe crashes the daemon (upstream bug). Use `neru status`.
 - [ ] If hotkeys don't respond after a reboot, the launchd service can be racy — run `neru launch`
 - [ ] Hotkeys: `Cmd+Shift+Space` hints/click · `Cmd+Shift+S` scroll · `Esc` exits a mode
+- [ ] Discord reply (`Cmd+Shift+R` in Discord) runs an AppleScript via System Events — approve the "Neru wants to control System Events" Automation prompt on first use
 
 ## Raycast
 
