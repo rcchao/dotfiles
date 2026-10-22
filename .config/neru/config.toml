@@ -54,6 +54,27 @@ text = "#E8EEFF"
 bundle_id = "com.hnc.Discord"
 hotkeys = { "Primary+Shift+R" = "hints --role static_text --action right_click --on-exit 'exec /usr/bin/osascript ~/.config/neru/discord-reply.applescript'" }
 
+# Slack reply-to-main-chat, two steps:
+# 1. Primary+Shift+R: hint a message (vision strategy — Slack's virtualized
+#    message list reports collapsed frames, so axtree hints can't see messages;
+#    vision needs Screen Recording permission once), click it, and the script
+#    presses the row's "Reply in thread" button, then pre-ticks "Also send to
+#    #channel" (thread pane opens, composer focused — type the reply; a plain
+#    Enter already lands in the main chat).
+# 2. Primary+Shift+Enter: ticks "Also send to #channel" if needed, presses
+#    "Send now", then closes the pane.
+[[app_configs]]
+bundle_id = "com.tinyspeck.slackmacgap"
+
+[app_configs.hotkeys]
+# vision hints label every text on screen (names, sidebar, buttons) — neru has
+# no region filter to narrow them to messages; press "/" in hint mode to
+# search-filter when the labels are too noisy.
+# middle_click, not right_click: it focuses the message row just the same but
+# never opens the native Look Up/link context menus
+"Primary+Shift+R" = "hints --strategy vision --action middle_click --on-exit 'exec /usr/bin/osascript -l JavaScript ~/.config/neru/slack-reply.js'"
+"Primary+Shift+Enter" = "exec /usr/bin/osascript -l JavaScript ~/.config/neru/slack-send-channel.js"
+
 # Macros
 # See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#macros
 #
