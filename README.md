@@ -24,13 +24,15 @@ chmod +x install.sh
 │   └── skills/
 ├── .config/
 │   ├── aerospace/
+│   ├── ccstatusline/
 │   ├── claude/
 │   ├── ghostty/
 │   ├── herdr/
 │   ├── kitty/
+│   ├── mpv/
 │   ├── neru/
 │   ├── presenterm/
-│   ├── starship/
+│   └── starship/
 ├── intellij/
 │   └── keymaps/
 ├── vscode/

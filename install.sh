@@ -68,6 +68,7 @@ CONFIG_DIRS=(
   "mpv"
   "presenterm"
   "starship"
+  "ccstatusline"
   "yabai"
   "skhd"
   "neru"
@@ -128,6 +129,55 @@ if [[ -f "$GHOSTTY_TARGET" ]]; then
   ln -sf "$GHOSTTY_TARGET" "$GHOSTTY_LINK"
   success "Linked $GHOSTTY_LINK"
 fi
+
+# Codex (config lives in ~/.codex/, alongside local app state)
+CODEX_FILES=(
+  "config.toml"
+  "AGENTS.md"
+  "rules/default.rules"
+)
+
+CODEX_DIRS=(
+  "skills/monitor"
+)
+
+mkdir -p "$HOME/.codex/rules"
+for f in "${CODEX_FILES[@]}"; do
+  target="$DOTFILES_DIR/.codex/$f"
+  link="$HOME/.codex/$f"
+
+  if [[ ! -f "$target" ]]; then
+    warn "No Codex config found at $target"
+    continue
+  fi
+
+  if [[ -e "$link" && ! -L "$link" ]]; then
+    warn "Backing up existing $link to $link.bak"
+    mv "$link" "$link.bak"
+  fi
+
+  ln -sf "$target" "$link"
+  success "Linked $link"
+done
+
+mkdir -p "$HOME/.codex/skills"
+for d in "${CODEX_DIRS[@]}"; do
+  target="$DOTFILES_DIR/.codex/$d"
+  link="$HOME/.codex/$d"
+
+  if [[ ! -d "$target" ]]; then
+    warn "No Codex directory found at $target"
+    continue
+  fi
+
+  if [[ -e "$link" && ! -L "$link" ]]; then
+    warn "Backing up existing $link to $link.bak"
+    mv "$link" "$link.bak"
+  fi
+
+  ln -sfn "$target" "$link"
+  success "Linked $link"
+done
 
 # ── 5. IntelliJ Keymaps ───────────────────────────────────────────
 info "Setting up IntelliJ keymaps..."
