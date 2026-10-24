@@ -34,6 +34,8 @@ cask "kitty"
 cask "ghostty"
 cask "visual-studio-code"
 cask "docker"
+# Logitech mouse config (thumb-button gestures -> aerospace shortcuts)
+cask "logi-options+"
 
 vscode "bradlc.vscode-tailwindcss"
 vscode "eamodio.gitlens"
