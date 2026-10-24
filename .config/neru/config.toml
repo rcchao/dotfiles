@@ -335,7 +335,7 @@ duration_ms = 50
 "Right" = "action move_mouse_relative --dx=10 --dy=0"
 "Space" = "action reset"
 "Backspace" = "action backspace"
-"Shift+L" = "action left_click"
+"Shift+L" = ["action left_click --bail-on-error", "idle"]
 "Shift+R" = "action right_click"
 "Shift+M" = "action middle_click"
 "Shift+I" = "action left_click --state down"
