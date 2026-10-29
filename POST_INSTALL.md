@@ -40,6 +40,7 @@ These steps require manual interaction and can't be fully automated.
 
 - [ ] Confirm that it's set as default browser (defaultbrowser should have handled this)
 - [ ] Sign in to Google account
+- [ ] Add a bookmark to `github.com/pulls` named exactly `PRS` (shows under the Bookmarks menu). This is what the Cmd+Shift+P shortcut fires — `macos/defaults.sh` sets up the shortcut, but the bookmark must exist. Restart Chrome after.
 
 ## Notifications
 

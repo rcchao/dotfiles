@@ -51,6 +51,11 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
 defaults write com.apple.screencapture type -string "png"
 
+# ── Chrome App Shortcuts ────────────────────────────────────────────
+# Cmd+Shift+P triggers the Chrome menu item titled "PRS" (a bookmark that
+# opens github.com/pulls). Menu-title → key equivalent; @=Cmd, $=Shift.
+defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "PRS" '@$p'
+
 # ── Chrome as Default Browser ───────────────────────────────────────
 # Note: macOS may prompt for confirmation on first run
 if command -v defaultbrowser &>/dev/null; then
