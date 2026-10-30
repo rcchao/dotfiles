@@ -40,7 +40,7 @@ These steps require manual interaction and can't be fully automated.
 
 - [ ] Confirm that it's set as default browser (defaultbrowser should have handled this)
 - [ ] Sign in to Google account
-- [ ] Add a bookmark to `github.com/pulls` named exactly `PRS` (shows under the Bookmarks menu). This is what the Cmd+Shift+P shortcut fires — `macos/defaults.sh` sets up the shortcut, but the bookmark must exist. Restart Chrome after.
+- [ ] Add a bookmark to `github.com/pulls` named exactly `PRS`, placed directly on the **Bookmarks Bar** (not inside a folder like "Other bookmarks"). This is what the Cmd+Shift+P shortcut fires — `macos/defaults.sh` sets up the shortcut, but it only binds to an item at the top level of the Bookmarks menu, which is where Bookmarks-Bar items appear. A bookmark buried in a folder is a lazily-built submenu and won't get the shortcut. Restart Chrome after.
 
 ## Notifications
 
