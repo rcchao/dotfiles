@@ -4,8 +4,10 @@
     [
       {
         "id": "5",
-        "type": "git-branch",
-        "color": "brightRed"
+        "type": "custom-command",
+        "color": "brightRed",
+        "commandPath": "d=$(cat); n=$(printf '%s' \"$d\" | jq -r '.session_name // empty'); if [ -n \"$n\" ]; then printf '%s' \"$n\"; else git -C \"$(printf '%s' \"$d\" | jq -r '.workspace.current_dir // .cwd // \".\"')\" branch --show-current 2>/dev/null; fi",
+        "timeout": 1000
       },
       {
         "id": "6",
